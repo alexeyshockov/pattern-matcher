@@ -23,9 +23,9 @@ $matcher = (new PatternMatcher(function ($className, ReflectionClass $class) {
     })
 ;
 
-$argument->getClass()
+$argument = $argumentDefinition->getClass()
     ->flatMap($matcher)
     ->getOrThrow(new InvalidArgumentException(
-        'Parameter $' . $argument->getName() . ': type is missed or not supported.'
+        'Parameter $' . $argumentDefinition->getName() . ': type is missed or not supported.'
     ));
 ```

@@ -17,11 +17,11 @@
     ],
     "require": {
         "php": ">=5.6.0",
-        "phpoption/phpoption": "~1.5@stable",
+        "phpoption/phpoption": "~1.5",
         "lstrojny/functional-php": "~1.2@dev"
     },
     "require-dev": {
-        "phpspec/phpspec": "@stable"
+        "phpspec/phpspec": "~2.2"
     },
     "autoload": {
         "psr-4": {
