@@ -1,6 +1,6 @@
 # pattern-matcher
 
-Simple pattern matching technique from functional languages.
+Simple pattern matching technique from functional languages. For PHP.
 
 ## Examples
 
