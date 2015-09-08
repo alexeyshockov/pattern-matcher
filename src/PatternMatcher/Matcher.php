@@ -43,8 +43,22 @@ class Matcher extends AbstractMatcher
      *
      * @return mixed
      */
+    public function match(...$arguments)
+    {
+        return $this->doMatch(array_merge($this->cases, [$this->defaultCase]), $arguments)->get();
+    }
+
+    /**
+     * The same as match() method (for simplicity).
+     *
+     * @param mixed ...$arguments
+     *
+     * @throws UnexpectedValueException If match was not found (default behaviour).
+     *
+     * @return mixed
+     */
     public function __invoke(...$arguments)
     {
-        return $this->match(array_merge($this->cases, [$this->defaultCase]), $arguments)->get();
+        return $this->doMatch(array_merge($this->cases, [$this->defaultCase]), $arguments)->get();
     }
 }

@@ -3,6 +3,7 @@
 namespace PatternMatcher;
 
 use PhpOption\None;
+use PhpOption\Option;
 use PhpOption\Some;
 
 use function Functional\partial_left;
@@ -48,22 +49,12 @@ abstract class AbstractMatcher
     }
 
     /**
-     * @param mixed ...$arguments
-     *
-     * @return \PhpOption\Option
-     */
-    public function __invoke(...$arguments)
-    {
-        return $this->match($this->cases, $arguments);
-    }
-
-    /**
      * @param array $cases
      * @param array $arguments
      *
-     * @return \PhpOption\Option
+     * @return Option
      */
-    protected function match(array $cases, array $arguments)
+    protected function doMatch(array $cases, array $arguments)
     {
         foreach ($cases as $case) {
             list($matcher, $action) = $case;
