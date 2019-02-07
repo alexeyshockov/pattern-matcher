@@ -7,6 +7,7 @@ use PhpOption\Option;
 use PhpOption\Some;
 
 use function Functional\partial_left;
+use function Functional\const_function;
 
 abstract class AbstractMatcher
 {

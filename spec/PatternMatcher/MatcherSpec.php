@@ -21,6 +21,7 @@ class MatcherSpec extends ObjectBehavior
         $this->setDefault('default_value')->shouldReturn($this);
 
         $this('some_value_to_match')->shouldReturn('default_value');
+        $this->match('some_value_to_match')->shouldReturn('default_value');
     }
 
     function it_supports_default_action()
@@ -28,11 +29,13 @@ class MatcherSpec extends ObjectBehavior
         $this->setDefault(function($value) { return strrev($value); })->shouldReturn($this);
 
         $this('some_value_to_match')->shouldReturn('hctam_ot_eulav_emos');
+        $this->match('some_value_to_match')->shouldReturn('hctam_ot_eulav_emos');
     }
 
     function it_has_default_exception()
     {
         $this->shouldThrow(UnexpectedValueException::class)->during('__invoke', ['some_value_to_match']);
+        $this->shouldThrow(UnexpectedValueException::class)->during('match', ['some_value_to_match']);
     }
 
     function it_matches_only_once()
@@ -41,6 +44,7 @@ class MatcherSpec extends ObjectBehavior
         $this->addCase(1, $this->getActionThatShouldNotBeCalled())->shouldReturn($this);
 
         $this(1)->shouldReturn('first_one');
+        $this->match(1)->shouldReturn('first_one');
     }
 
     function it_should_support_constants_patterns()

@@ -21,11 +21,13 @@ class OptionMatcherSpec extends ObjectBehavior
         $this->addCase(1, 'one')->shouldReturn($this);
 
         $this(1)->shouldBeAnOptionOf('one');
+        $this->match(1)->shouldBeAnOptionOf('one');
     }
 
     function it_produces_an_empty_option_when_nothing_matches()
     {
         $this('some_value_to_match')->shouldBeAnEmptyOption();
+        $this->match('some_value_to_match')->shouldBeAnEmptyOption();
     }
 
     public function getMatchers()

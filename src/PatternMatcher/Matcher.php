@@ -3,6 +3,7 @@
 namespace PatternMatcher;
 
 use UnexpectedValueException;
+use function Functional\const_function;
 
 class Matcher extends AbstractMatcher
 {
@@ -20,7 +21,7 @@ class Matcher extends AbstractMatcher
 
         $this->defaultCase = [
             function () { return true; },
-            function () { throw new UnexpectedValueException("Passed value does not match any pattern."); }
+            function () { throw new UnexpectedValueException('Passed value does not match any pattern.'); }
         ];
     }
 
