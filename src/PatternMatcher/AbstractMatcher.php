@@ -37,7 +37,7 @@ abstract class AbstractMatcher
      * @param callable|mixed $pattern
      * @param callable|mixed $action
      *
-     * @return static
+     * @return $this
      */
     public function addCase($pattern, $action)
     {

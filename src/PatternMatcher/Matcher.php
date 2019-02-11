@@ -28,7 +28,7 @@ class Matcher extends AbstractMatcher
     /**
      * @param callable|mixed $action
      *
-     * @return static
+     * @return $this
      */
     public function setDefault($action)
     {
